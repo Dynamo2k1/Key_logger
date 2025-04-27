@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1745761318 source:e:\keylogger\advance keylogger\advkeylogger\main.cpp
+1745770721 source:e:\keylogger\advance keylogger\advkeylogger\main.cpp
 	<iostream>
 	<windows.h>
 	"Helper.h"
 	"Base64.h"
 	"KeyConstants.h"
 	"IO.h"
+	"Timer.h"
 
 1745761630 e:\keylogger\advance keylogger\advkeylogger\helper.h
 	<ctime>
@@ -28,4 +29,9 @@
 	<windows.h>
 	"Helper.h"
 	"Base64.h"
+
+1745771334 e:\keylogger\advance keylogger\advkeylogger\timer.h
+	<chrono>
+	<thread>
+	<functional>
 
