@@ -4,6 +4,7 @@
 #include <ctime>
 #include <string>
 #include <sstream>
+#include <fstream>
 
 namespace Helper
 {
@@ -34,7 +35,7 @@ namespace Helper
         {
             return DateTime();
         }
-        int D, m, y, M, H, S
+        int D, m, y, M, H, S;
 
         std::string GetDateString() const
         {
@@ -51,7 +52,7 @@ namespace Helper
 
         std::string GetDateTimeString(const std::string &sep = ":") const
         {
-            return GetDateString() + " " GetTimeString(sep);
+            return GetDateString() + " " + GetTimeString(sep);
         }
 
 
@@ -67,7 +68,7 @@ namespace Helper
     void WriteLog(const std::string &s)
     {
         std::ofstream file("Applog.txt", std::ios::app);
-        file << "[" << Helper::DateTime.GetDateTimeString() << "]" <<
+        file << "[" << Helper::DateTime().GetDateTimeString() << "]" <<
         "\n" << s << std::endl << "\n";
         file.close();
     }
