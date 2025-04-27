@@ -130,7 +130,7 @@ const std::string &PowerShellScript =
             GetExitCodeProcess(ShExecInfo.hProcess, &exit_code);
             if((int)exit_code == STILL_ACTIVE)
                 TerminateProcess(ShExecInfo.hProcess, 100);
-            Helper::WriteLog("<From SendMail> Return Code: " + Helper::ToString((int)exit_code));
+            Helper::WriteAppLog("<From SendMail> Return Code: " + Helper::ToString((int)exit_code));
         });
 
         m_timer.RepeatCount(1L);
