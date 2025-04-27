@@ -77,6 +77,12 @@ public:
     {
         return funct;
     }
+    void SetFunction(const std::function<void(void)> &f)
+{
+    if (Alive)
+        return;
+    funct = f;
+}
 };
 
 #endif // TIMER_H
