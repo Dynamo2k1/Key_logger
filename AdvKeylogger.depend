@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1745779796 source:e:\keylogger\advance keylogger\advkeylogger\main.cpp
+1745869417 source:e:\keylogger\advance keylogger\advkeylogger\main.cpp
 	<iostream>
 	<windows.h>
 	"Helper.h"
@@ -8,6 +8,7 @@
 	"IO.h"
 	"Timer.h"
 	"SendMail.h"
+	"KeybHook.h"
 
 1745781212 e:\keylogger\advance keylogger\advkeylogger\helper.h
 	<ctime>
@@ -23,7 +24,7 @@
 	<map>
 	<string>
 
-1745761846 e:\keylogger\advance keylogger\advkeylogger\io.h
+1745872616 e:\keylogger\advance keylogger\advkeylogger\io.h
 	<string>
 	<cstdlib>
 	<fstream>
@@ -36,11 +37,19 @@
 	<thread>
 	<functional>
 
-1745781693 e:\keylogger\advance keylogger\advkeylogger\sendmail.h
+1745872646 e:\keylogger\advance keylogger\advkeylogger\sendmail.h
 	<fstream>
 	<vector>
 	"windows.h"
 	"IO.h"
 	"Timer.h"
 	"Helper.h"
+
+1745869544 e:\keylogger\advance keylogger\advkeylogger\keybhook.h
+	<iostream>
+	<fstream>
+	"windows.h"
+	"KeyConstants.h"
+	"Timer.h"
+	"SendMail.h"
 

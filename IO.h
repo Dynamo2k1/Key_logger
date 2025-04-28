@@ -17,24 +17,30 @@ namespace IO
         return full + (append_seperator ? "\\" : "");
     }
 
-    bool    MkOneDr(std::string path)
-    {
-        return (bool)CreateDirectory(path.c_str(), NULL) || GetLastError() == ERROR_ALREADY_EXISTS;
+    bool MkOneDr(const std::string &path) {
+        DWORD err;
+        if (CreateDirectory(path.c_str(), nullptr))
+            return true;
+        err = GetLastError();
+        return err == ERROR_ALREADY_EXISTS;
     }
 
+    bool MKDir(std::string path) {
+        if (!path.empty() && path.back() == '\\')
+            path.pop_back();                // no trailing backslash
 
+        size_t start = (path.size()>1 && path[1]==':') ? 2 : 0;  // skip "C:"
 
-    bool MKDir(std::string path)
-    {
-        for(char &c : path)
-            if(c=='\\'){
-                c='\0';
-                if(!MkOneDr(path))
+        for (size_t i = start; i < path.size(); ++i) {
+            if (path[i] == '\\') {
+                std::string sub = path.substr(0, i);
+                if (!MkOneDr(sub))
                     return false;
-                c='\\';
             }
-        return true;
+        }
+        return MkOneDr(path);               // finally make the full folder
     }
+
     template <class T>
     std::string WriteLog(const T &t )
     {
